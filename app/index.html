@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Projeto Viagem Espacial</title>
+</head>
+<body>
+    <h1>Viagem Espacial</h1>
+    
+</body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="/add">Adicionar Missão</a>
+        </div>
+        <div class="col-xs-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Release_Date</th>
+                        <th>Endpoint</th>
+                        <th>Mission_State</th>
+                        <th>Crew</th>
+                        <th>Playload</th>
+                        <th>Duration</th>
+                        <th>Cast</th>
+                        <th>Status</th>
+                    </tr>
+                    <tbody>
+                        {% for e in estudantes %}
+                        <tr>
+                            <td>{{e.nome}}</td>
+                            <td>{{e.release_date}}</td>
+                            <td>{{e.endpoint}}</td>
+                            <td>{{e.mission_state}}</td>
+                            <td>{{e.crew}}</td>
+                            <td>{{e.playload}}</td>
+                            <td>{{e.duration}}</td>
+                            <td>{{e.cast}}</td>
+                            <td>{{e.status}}</td>
+                            <td>
+                                <a href="/edit/{{e.id}}">Editar</a>
+                                <a href="/delete/{{e.id}}">Excluir</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+</html>
